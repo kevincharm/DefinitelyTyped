@@ -271,6 +271,7 @@ export class AnimationClip {
     optimize(): AnimationClip;
 
     static CreateFromMorphTargetSequence( name: string, morphTargetSequence: MorphTarget[], fps: number, noLoop: boolean ): AnimationClip;
+    static findByName<T extends { animations: AnimationClip[] }>( object: T, name: string ): AnimationClip;
     static findByName( clipArray: AnimationClip[], name: string ): AnimationClip;
     static CreateClipsFromMorphTargetSequences( morphTargets: MorphTarget[], fps: number, noLoop: boolean ): AnimationClip[];
     static parse( json: any ): AnimationClip;
